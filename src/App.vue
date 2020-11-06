@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import MainTabBar from './components/MainTabbar/MainTabBar'
+import MainTabBar from './components/content/MainTabbar/MainTabBar'
 export default {
   name : 'App',
   components : {
@@ -15,6 +15,6 @@ export default {
 }
 </script>
 <style>
-/* @import './assets/css/normalize.css' */
+@import './assets/css/base.css'
 
 </style>

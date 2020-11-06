@@ -2,7 +2,7 @@
   <div class="tabbaritem" @click="itemclick">
 <div v-if="!isActive"><slot name="item-icon"></slot></div>
 <div v-else><slot name="item-icon-active"></slot></div>
-<div><slot name="item-text"></slot></div>
+<div :style="activeStyle"><slot name="item-text"></slot></div>
   </div>
 </template>
 
@@ -10,11 +10,19 @@
 export default {
   name : "TabBarItem",
   props : {
-    path : String
+    path : String,
+    activeColor:{
+      // 设置默认字体颜色为红色，如果想改成别的颜色需要再注册的组件标签中配置
+      type : String,
+      default : 'red'
+    }
   },
   computed : {
     isActive(){
       return this.$route.path.indexOf(this.path) !== -1
+    },
+    activeStyle(){
+      return this.isActive ? {color : this.activeColor} : {}
     }
   },
   methods : {

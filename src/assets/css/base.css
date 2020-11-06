@@ -1,6 +1,57 @@
-*{
+@import  "./normalize.css";
+
+body{
   margin: 0;
   padding: 0;
   list-style: none;
   text-decoration: none;
+}
+/* :root用于获取根元素 */
+:root{
+
+  /* --color:red 前面加--表示定义变量，在其他地方可以用var(--color)来复用红色 */
+  --clolor-text : #666;
+  --clolor-higt-text : #ff5777; 
+  --color-tint : #ff8198;
+  --color-background : #fff;
+  --font-size : 14px;
+  --line-height : 1.5;
+}
+
+*，,
+*::before,
+*::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: "Helvetica Neue", Helvetica,"pingFang sc","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+  user-select : none;
+  -webkit-tab-highlight-color : transparent;
+  background: var(--color-background);
+  width: 100vm;
+}
+
+a{
+  color: var(--color-text);
+}
+.clear-fix::after{
+  clear: both;
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+.clear-fix{
+  zoom: 1;
+}
+.left{
+  float: left;
+}
+.right{
+  float: right;
 }
